@@ -17,6 +17,18 @@ describe 'PigLatin' do
 
     it "cuts of all consonants up to 'y' or vowel if y is not the first letter" do
       expect(PigLatin.cut_front("rhythm")).to eq("rh")
+      expect(PigLatin.cut_front("harvey")).to eq("h")
+    end
+  end
+
+  describe '.capture_back' do
+    it "captures everything after the first consonant" do
+      expect(PigLatin.capture_back("bad")).to eq("ad")
+      expect(PigLatin.capture_back("flow")).to eq("ow")
+    end
+
+    it "captures the whole word if it starts with a vowel" do
+      expect(PigLatin.capture_back("antelope")).to eq("antelope")
     end
   end
 end

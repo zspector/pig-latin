@@ -9,4 +9,8 @@ module PigLatin
       /[^aeiouy]+/.match(word).to_s
     end
   end
+
+  def self.capture_back(word)
+    /[aeiou](.*)/.match(word).to_s
+  end
 end
