@@ -30,5 +30,17 @@ describe 'PigLatin' do
     it "captures the whole word if it starts with a vowel" do
       expect(PigLatin.capture_back("antelope")).to eq("antelope")
     end
+
+    it "captures the end of the word if it starts with 'y'" do
+      expect(PigLatin.capture_back("yellow")).to eq("ellow")
+    end
+
+    it "captures end of word containing but not starting with 'y'" do
+      expect(PigLatin.capture_back("rhythm")).to eq("ythm")
+    end
+
+    it "captures words with two vowels in a row" do
+      expect(PigLatin.capture_back("reek")).to eq ("eek")
+    end
   end
 end
