@@ -13,7 +13,7 @@ module PigLatin
   end
 
   def self.capture_back(word)
-    /\Ay/i.match(word).to_s == "y" || /y/i.match(word) == nil ? /[aeiou](.*)/.match(word).to_s : /[aeiouy](.*)/.match(word).to_s
+    /\Ay/i.match(word).to_s == "y" || /y/i.match(word) == nil ? /[aeiou](.*)/i.match(word).to_s : /[aeiouy](.*)/i.match(word).to_s
   end
 
   def self.translate(word)

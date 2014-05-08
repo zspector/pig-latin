@@ -23,6 +23,10 @@ describe 'PigLatin' do
     it "returns 'way' if the word starts with a vowel" do
       expect(PigLatin.cut_front("owl")).to eq("w")
     end
+
+    it "returns correctly with uppercase words starting with vowel" do
+      expect(PigLatin.cut_front("Ashley")).to eq("w")
+    end
   end
 
   describe '.capture_back' do
@@ -45,6 +49,10 @@ describe 'PigLatin' do
 
     it "captures words with two vowels in a row" do
       expect(PigLatin.capture_back("reek")).to eq ("eek")
+    end
+
+    it "returns correctly with uppercase words starting with vowel" do
+      expect(PigLatin.capture_back("Ashley")).to eq("Ashley")
     end
   end
 
@@ -72,6 +80,10 @@ describe 'PigLatin' do
 
     it "translates words beginning with vowels correctly" do
       expect(PigLatin.translate("aardvark")).to eq("aardvark-way")
+    end
+
+    it "returns correctly with uppercase words starting with vowel" do
+      expect(PigLatin.translate("Ashley")).to eq("Ashley-way")
     end
   end
 end
